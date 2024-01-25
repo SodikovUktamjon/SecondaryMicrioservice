@@ -39,7 +39,6 @@ public class TrainerWorkloadService {
     }
 
     private List<YearlySummary> generateYearlySummaries(Trainer trainer) {
-        // Assuming you want to generate yearly summaries for the last 3 years
         int currentYear = LocalDateTime.now().getYear();
         return List.of(
                 YearlySummary.builder()

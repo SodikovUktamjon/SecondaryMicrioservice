@@ -1,5 +1,6 @@
 package com.example.secondarymicrioservice;
 
+import com.example.secondarymicrioservice.summary.Summary;
 import jakarta.annotation.Nonnull;
 import jakarta.annotation.PostConstruct;
 import jakarta.validation.constraints.NotNull;
@@ -7,10 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.apache.http.protocol.HTTP;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -31,6 +29,13 @@ public class TrainerController {
           return ResponseEntity.ok(null);
 
 
-          }
+     }
+
+
+     @GetMapping("/summary")
+     public ResponseEntity<Summary> getReport(@RequestBody int id){
+         return ResponseEntity.ok( trainerWorkloadService.getSummary(id));
+
+     }
 
 }
