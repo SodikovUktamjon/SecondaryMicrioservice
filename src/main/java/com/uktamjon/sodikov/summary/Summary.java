@@ -1,6 +1,6 @@
-    package com.example.secondarymicrioservice.summary;
+    package com.uktamjon.sodikov.summary;
 
-    import com.example.secondarymicrioservice.Trainer;
+    import com.uktamjon.sodikov.domains.Trainer;
     import lombok.*;
 
     import java.util.List;

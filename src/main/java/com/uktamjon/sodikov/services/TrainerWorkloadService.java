@@ -1,8 +1,10 @@
-package com.example.secondarymicrioservice;
+package com.uktamjon.sodikov.services;
 
-import com.example.secondarymicrioservice.summary.MonthlySummary;
-import com.example.secondarymicrioservice.summary.Summary;
-import com.example.secondarymicrioservice.summary.YearlySummary;
+import com.uktamjon.sodikov.domains.Trainer;
+import com.uktamjon.sodikov.repositories.TrainerRepository;
+import com.uktamjon.sodikov.summary.MonthlySummary;
+import com.uktamjon.sodikov.summary.Summary;
+import com.uktamjon.sodikov.summary.YearlySummary;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

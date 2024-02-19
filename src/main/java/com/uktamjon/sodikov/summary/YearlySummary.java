@@ -1,4 +1,4 @@
-package com.example.secondarymicrioservice.summary;
+package com.uktamjon.sodikov.summary;
 
 import lombok.*;
 

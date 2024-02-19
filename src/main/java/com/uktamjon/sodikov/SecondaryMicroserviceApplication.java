@@ -1,4 +1,4 @@
-package com.example.secondarymicrioservice;
+package com.uktamjon.sodikov;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import org.springframework.boot.SpringApplication;
@@ -10,10 +10,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @OpenAPIDefinition
 @EnableDiscoveryClient
 @EnableJpaRepositories
-public class SecondaryMicrioserviceApplication {
+public class SecondaryMicroserviceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SecondaryMicrioserviceApplication.class, args);
+        SpringApplication.run(SecondaryMicroserviceApplication.class, args);
     }
 
 }

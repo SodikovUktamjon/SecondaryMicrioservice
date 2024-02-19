@@ -1,13 +1,11 @@
-package com.example.secondarymicrioservice;
+package com.uktamjon.sodikov.controllers;
 
-import com.example.secondarymicrioservice.summary.Summary;
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.PostConstruct;
+import com.uktamjon.sodikov.domains.Trainer;
+import com.uktamjon.sodikov.services.TrainerWorkloadService;
+import com.uktamjon.sodikov.summary.Summary;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
-import org.apache.http.protocol.HTTP;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

@@ -1,8 +1,8 @@
-package com.example.secondarymicrioservice;
+package com.uktamjon.sodikov.services;
 
-import com.example.secondarymicrioservice.Trainer;
-import com.example.secondarymicrioservice.TrainerRepository;
-import com.example.secondarymicrioservice.TrainerWorkloadService;
+import com.uktamjon.sodikov.domains.Trainer;
+import com.uktamjon.sodikov.repositories.TrainerRepository;
+import com.uktamjon.sodikov.services.TrainerWorkloadService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

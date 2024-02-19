@@ -1,4 +1,4 @@
-package com.example.secondarymicrioservice;
+package com.uktamjon.sodikov.domains;
 
 import jakarta.persistence.*;
 import lombok.*;
