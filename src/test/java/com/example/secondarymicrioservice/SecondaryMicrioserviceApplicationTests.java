@@ -9,5 +9,4 @@ class SecondaryMicrioserviceApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }
