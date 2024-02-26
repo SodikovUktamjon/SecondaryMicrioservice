@@ -18,7 +18,7 @@ import java.util.Properties;
 
 @Configuration
 @RequiredArgsConstructor
-@PropertySource("classpath:application-dev.properties")
+@PropertySource("classpath:application.properties")
 public class SpringDataConfigurer {
 
     private final Environment env;
