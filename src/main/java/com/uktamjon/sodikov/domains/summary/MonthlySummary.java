@@ -17,5 +17,6 @@ import java.util.List;
 public class MonthlySummary {
 
     private LocalDateTime date;
-    private List<String> summaries;
+    private List<String > summaries;
 }
+    
