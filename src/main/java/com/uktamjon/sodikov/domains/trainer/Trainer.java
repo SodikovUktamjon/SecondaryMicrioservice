@@ -1,4 +1,4 @@
-package com.uktamjon.sodikov.domains;
+package com.uktamjon.sodikov.domains.trainer;
 
 import com.uktamjon.sodikov.enums.ActionType;
 import lombok.*;
@@ -16,7 +16,7 @@ public class Trainer {
     private String firstName;
     private String lastName;
     private boolean isActive;
-    private LocalDateTime localDateTime;
+    private LocalDateTime startDate;
     private int duration;
     private ActionType actionType;
 }

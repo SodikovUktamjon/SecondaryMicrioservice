@@ -1,8 +1,8 @@
 package com.uktamjon.sodikov.domains.summary;
 
+import com.uktamjon.sodikov.domains.trainer.Trainer;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.GenericGenerator;
 
 import java.util.List;
 
@@ -14,10 +14,12 @@ import java.util.List;
 @Builder
 public class Summary {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private int trainerId;
-    @ElementCollection
-    private List<YearlySummary> yearlySummary;
+    private Integer id;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "trainer_id", referencedColumnName = "id")
+    private Trainer trainer;
+
+    @OneToMany(mappedBy = "summary", cascade = CascadeType.ALL)
+    private List<YearlySummary> yearlySummaries;
 }

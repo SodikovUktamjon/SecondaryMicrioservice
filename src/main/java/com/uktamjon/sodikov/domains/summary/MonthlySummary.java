@@ -1,22 +1,26 @@
 package com.uktamjon.sodikov.domains.summary;
 
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.uktamjon.sodikov.domains.summary.YearlySummary;
+import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDateTime;
-import java.util.List;
-@Embeddable
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Entity
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"yearly_summary_id", "month"}))
 public class MonthlySummary {
 
-    private LocalDateTime date;
-    private List<String > summaries;
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name="yearly_summary_id", nullable=false)
+    private YearlySummary yearlySummary;
+
+    private Integer month;
+    private Integer trainingSummaryDuration;
 }
-    

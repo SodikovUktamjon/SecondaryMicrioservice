@@ -1,6 +1,7 @@
 package com.uktamjon.sodikov.repositories;
 
 import com.uktamjon.sodikov.domains.summary.Summary;
+import com.uktamjon.sodikov.domains.trainer.Trainer;
 import com.uktamjon.sodikov.services.SummaryService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -24,11 +25,11 @@ public class SummaryRepositoryTest {
     public void testFindByTrainerId() {
         int trainerId = 1;
         Summary expectedSummary = new Summary();
-        expectedSummary.setTrainerId(trainerId);
+        expectedSummary.setTrainer(Trainer.builder().id(trainerId).build());
 
         when(summaryRepository.findByTrainerId(trainerId)).thenReturn(expectedSummary);
 
-        Summary actualSummary = summaryService.getSummaries(trainerId);
+        Summary actualSummary = summaryService.getSummaryByTrainerId(trainerId);
 
         assertEquals(expectedSummary, actualSummary);
 

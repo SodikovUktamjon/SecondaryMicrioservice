@@ -8,6 +8,4 @@ import org.springframework.stereotype.Repository;
 public interface SummaryRepository extends JpaRepository<Summary, Integer> {
      Summary findByTrainerId(int id);
 
-     void deleteAllByTrainerId(int id);
-
 }

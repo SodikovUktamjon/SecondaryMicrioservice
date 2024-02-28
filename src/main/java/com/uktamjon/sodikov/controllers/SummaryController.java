@@ -1,6 +1,6 @@
 package com.uktamjon.sodikov.controllers;
 
-import com.uktamjon.sodikov.domains.Trainer;
+import com.uktamjon.sodikov.domains.trainer.Trainer;
 import com.uktamjon.sodikov.services.SummaryService;
 import com.uktamjon.sodikov.domains.summary.Summary;
 import jakarta.validation.constraints.NotNull;
@@ -17,14 +17,14 @@ public class SummaryController {
 
      @PostMapping("/modify")
      public ResponseEntity<Void> modify(@RequestBody @NotNull Trainer trainer) {
-          summaryService.modify(trainer);
+          summaryService.modifyWorkload(trainer);
           return ResponseEntity.ok().build();
      }
 
 
      @GetMapping("/summary")
      public ResponseEntity<Summary> getSummaries(@RequestBody int id){
-         return ResponseEntity.ok( summaryService.getSummaries(id));
+         return ResponseEntity.ok( summaryService.getSummaryByTrainerId(id));
      }
 
 }

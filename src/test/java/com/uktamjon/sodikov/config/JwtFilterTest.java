@@ -32,32 +32,6 @@ public class JwtFilterTest {
 
 
 
-
-
-//    @Test
-//    void doFilterInternal_ValidToken_ShouldSetAuthentication() throws ServletException, IOException {
-//        String token = "validToken";
-//        String username = "testUser";
-//
-//        HttpServletRequest request = mock(HttpServletRequest.class);
-//        HttpServletResponse response = mock(HttpServletResponse.class);
-//        FilterChain filterChain = mock(FilterChain.class);
-//
-//        when(request.getHeader("Authorization")).thenReturn("Bearer " + token);
-//
-//        UserDetails userDetails = new User(username, "", Collections.emptyList());
-//
-//        when(jwtTokenUtil.isValid(token, TokenType.ACCESS)).thenReturn(true);
-//        when(jwtTokenUtil.getUsername(token, TokenType.ACCESS)).thenReturn(username);
-//
-//        when(userDetailsService.loadUserByUsername(username)).thenReturn(userDetails);
-//
-//        jwtFilter.doFilterInternal(request, response, filterChain);
-//
-//        verify(userDetailsService).loadUserByUsername(username);
-//        verify(filterChain).doFilter(request, response);
-//    }
-
     @Test
     void doFilterInternal_InvalidToken_ShouldNotSetAuthentication() throws ServletException, IOException {
         String invalidToken = "invalidToken";
