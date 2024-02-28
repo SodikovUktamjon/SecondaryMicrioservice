@@ -22,8 +22,8 @@ public class SummaryController {
      }
 
 
-     @GetMapping("/summary")
-     public ResponseEntity<Summary> getSummaries(@RequestBody int id){
+          @GetMapping("/summary")
+          public ResponseEntity<Summary> getSummaries(@RequestBody int id){
          return ResponseEntity.ok( summaryService.getSummaryByTrainerId(id));
      }
 
