@@ -31,23 +31,27 @@ public class AuthController {
 
     @GetMapping("/token")
     public ResponseEntity<TokenResponse> getToken(@Valid TokenRequest tokenRequest) {
+        log.info("Getting token for user: {}", tokenRequest.getUsername());
         return ResponseEntity.ok(userDetailsService.generateToken(tokenRequest));
     }
 
 
     @PostMapping("/refresh")
     public ResponseEntity<TokenResponse> refresh(@Valid RefreshTokenRequest refreshTokenRequest) {
+        log.info("Getting refresh token: {}", refreshTokenRequest.getRefreshToken());
         return ResponseEntity.ok(userDetailsService.refreshToken(refreshTokenRequest));
     }
 
 
     @GetMapping("/login")
     public ResponseEntity<GetTokenDTO> login(CreateAuthUserDTO request) {
+        log.info("Logging in with user: {}", request.getUsername());
         return ResponseEntity.ok(authService.login(request));
     }
 
     @PostMapping("/logout")
     public ResponseEntity<Void> logout() {
+        log.info("Logging out");
         return ResponseEntity.noContent().build();
     }
 

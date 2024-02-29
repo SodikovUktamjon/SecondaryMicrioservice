@@ -21,6 +21,7 @@ public class PasswordGeneratorService {
 
     public String generateRandomPassword(int length) {
         if (length < 1) {
+            log.trace("Password length is not proper: {}", length);
             throw new IllegalArgumentException("Length must be at least 1");
         }
 
@@ -30,12 +31,13 @@ public class PasswordGeneratorService {
             int randomIndex = random.nextInt(PASSWORD_ALLOW.length());
             password.append(PASSWORD_ALLOW.charAt(randomIndex));
         }
-
+        log.info("Generated some password");
         return password.toString();
     }
 
 
     public String encryptPassword(String password) {
+        log.info("Encrypting password: {}", password);
         String encryptedPassword = null;
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
@@ -56,6 +58,7 @@ public class PasswordGeneratorService {
     }
 
     public boolean checkPassword(String enteredPassword, String storedEncryptedPassword) {
+        log.info("Checking password: {} and {}", enteredPassword, storedEncryptedPassword);
         return enteredPassword.equals(storedEncryptedPassword);
     }
 
