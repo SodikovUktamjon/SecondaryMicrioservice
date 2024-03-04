@@ -185,7 +185,7 @@ public class UserService {
         return "TX-" + System.currentTimeMillis();  // Replace with your actual transaction ID generation logic
     }
 
-    private String generateUserName(String firstName, String lastName) {
+    public  String generateUserName(String firstName, String lastName) {
         MDC.put("transactionId", generateTransactionId());
         String baseUsername = firstName + "." + lastName;
 

@@ -53,7 +53,6 @@ public class UserServiceTest {
         String baseUsername = firstName + "." + lastName;
 
         when(userRepository.existsByUsername(baseUsername)).thenReturn(true);
-
         String generatedUsername = userService.generateUserName(firstName, lastName);
 
         assertEquals("John.Doe1", generatedUsername);
