@@ -7,6 +7,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -18,7 +19,7 @@ public class SummaryController {
 
 
      @PostMapping("/modify")
-     public ResponseEntity<Void> modify(@RequestBody @NotNull Trainer trainer) {
+     public ResponseEntity<Void> modify(@RequestBody @NonNull Trainer trainer) {
           log.info("Modifying workload with trainerId: {}", trainer.getId());
           summaryService.modifyWorkload(trainer);
           return ResponseEntity.ok().build();
