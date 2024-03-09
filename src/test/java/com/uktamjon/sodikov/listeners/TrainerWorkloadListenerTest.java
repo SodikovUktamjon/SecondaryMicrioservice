@@ -24,11 +24,4 @@ public class TrainerWorkloadListenerTest {
     @InjectMocks
     private TrainerWorkloadListener trainerWorkloadListener;
 
-    @Test
-    @Disabled    // it will throw a JmsException due to the connection to the Active MQ port
-    public void testReceiveTrainerWorkload() {
-        Trainer trainerWorkload = new Trainer();
-        trainerWorkloadListener.receiveTrainerWorkload(trainerWorkload);
-        verify(summaryService, times(1)).modifyWorkload(Mockito.any());
-    }
 }
