@@ -22,18 +22,19 @@ public class SummaryControllerTest {
 
     @InjectMocks
     private SummaryController summaryController;
+    @Test
+    public void testModify_validTrainer() {
+        Trainer trainer = Trainer.builder()
+                .id(1)
+                .username("John.Doe").build();
 
-//    @Test
-//    public void testModify() {
-//        Trainer trainer = new Trainer();
-//
-//        ResponseEntity<Void> responseEntity = summaryController.modify(trainer);
-//
-//        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
-//
-//        verify(summaryService, times(1)).modify(trainer);
-//    }
+        doNothing().when(summaryService).modifyWorkload(trainer);
 
+        ResponseEntity<Void> response = summaryController.modify(trainer);
+
+        verify(summaryService).modifyWorkload(trainer);
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+    }
     @Test
     public void testGetSummaries() {
         int trainerId = 1;
