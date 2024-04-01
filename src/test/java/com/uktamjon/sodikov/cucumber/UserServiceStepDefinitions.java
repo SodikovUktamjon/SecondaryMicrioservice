@@ -1,4 +1,4 @@
-package com.uktamjon.sodikov.acucumber;
+package com.uktamjon.sodikov.cucumber;
 
 import com.uktamjon.sodikov.domains.User;
 import com.uktamjon.sodikov.services.PasswordGeneratorService;

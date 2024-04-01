@@ -156,7 +156,6 @@ public class UserServiceTest {
 
         when(userRepository.findByUsername("john_doe")).thenReturn(user);
         when(userRepository.save(user)).thenReturn(user);
-        when(userRepository.findById(user.getId())).thenReturn(Optional.of(user));
 
         assertTrue(userService.changePassword("P@ssw0rd", "john_doe"));
     }

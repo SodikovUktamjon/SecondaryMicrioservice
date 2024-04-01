@@ -89,4 +89,9 @@ public class SummaryService {
         return summaryRepository.findByTrainerId(trainerId);
     }
 
+    public Summary getSummaryByTrainerUserName(String trainerId) {
+        log.info("Getting summary by trainer id: {}", trainerId);
+        return summaryRepository.findByTrainer(trainerId);
+    }
+
 }
