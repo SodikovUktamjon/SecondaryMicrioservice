@@ -8,7 +8,7 @@ public class PasswordGeneratorServiceTest {
 
     @Test
     public void testGenerateRandomPassword_LengthOne() {
-        PasswordGeneratorService passwordGeneratorService = new PasswordGeneratorService();
+      PasswordGeneratorService passwordGeneratorService = new PasswordGeneratorService();
         String generatedPassword = passwordGeneratorService.generateRandomPassword(1);
 
         assertEquals(1, generatedPassword.length());
@@ -46,11 +46,11 @@ public class PasswordGeneratorServiceTest {
 
     @Test
     public void testCheckPassword() {
-        PasswordGeneratorService encryptionService = new PasswordGeneratorService();
+       PasswordGeneratorService encryptionService = new PasswordGeneratorService();
 
         String password = "password123";
         String storedEncryptedPassword = encryptionService.encryptPassword(password);
-        assertFalse(encryptionService.checkPassword(password, storedEncryptedPassword));
+        assertTrue(encryptionService.checkPassword(password, storedEncryptedPassword));
         assertFalse(encryptionService.checkPassword("incorrect_password", storedEncryptedPassword));
     }
 }
