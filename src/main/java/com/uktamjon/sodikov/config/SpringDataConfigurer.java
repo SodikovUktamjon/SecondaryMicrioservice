@@ -1,11 +1,15 @@
 package com.uktamjon.sodikov.config;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.autoconfigure.mongo.MongoClientFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.data.mongodb.core.MongoClientFactoryBean;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -33,8 +37,15 @@ public class SpringDataConfigurer {
         return dataSource;
     }
 
+    @Bean
+    public MongoTemplate mongoTemplate() {
+        return new MongoTemplate(mongoDbFactory());
+    }
 
-
+    @Bean
+    public SimpleMongoClientDatabaseFactory mongoDbFactory() {
+        return new SimpleMongoClientDatabaseFactory("spring.data.mongodb.uri");
+    }
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {

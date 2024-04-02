@@ -50,7 +50,7 @@ public class TrainerDocumentService {
             byUsername.setLastName(trainerDocument.getLastName());
             byUsername.setStatus(trainerDocument.getStatus());
             byUsername.setYearsList(trainerDocument.getYearsList());
-            trainerDocumentRepository.save(trainerDocument);
+            trainerDocumentRepository.insert(trainerDocument);
             log.info("updateTrainingsSummaryDuration completed successfully for Username: {}", username);
         } catch (Exception e) {
             log.error("Error in updateTrainingsSummaryDuration", e);
@@ -88,7 +88,7 @@ public class TrainerDocumentService {
                         ))
                         .build();
 
-                trainerDocumentRepository.save(newTrainer);
+                trainerDocumentRepository.insert(newTrainer);
                 log.info("Saved new TrainerDocument for Username: {}", username);
             } else {
                 String month = trainer.getStartDate().format(DateTimeFormatter.ofPattern("MMMM"));
@@ -108,7 +108,7 @@ public class TrainerDocumentService {
                         int updatedDuration = foundMonth.getTrainingsSummaryDuration() + trainer.getDuration();
                         foundMonth.setTrainingsSummaryDuration(updatedDuration);
 
-                        trainerDocumentRepository.save(trainerDocument);
+                        trainerDocumentRepository.insert(trainerDocument);
                         log.info("Updated TrainerDocument after processing new event for Username: {}", username);
                     }
                 }
