@@ -2,11 +2,15 @@ package com.uktamjon.sodikov.cucumber;
 
 import com.uktamjon.sodikov.domains.summary.Summary;
 import com.uktamjon.sodikov.domains.trainer.Trainer;
+import com.uktamjon.sodikov.enums.ActionType;
 import com.uktamjon.sodikov.services.SummaryService;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.time.LocalDateTime;
+
 import static org.junit.Assert.*;
 public class TrainerWorkloadSteps {
     private Trainer trainer;
@@ -17,10 +21,13 @@ public class TrainerWorkloadSteps {
     @Given("a trainer with ID {int} exists in the system")
     public void a_trainer_with_ID_exists_in_the_system(int trainerId) {
         trainer= Trainer.builder()
+                .id(trainerId)
                 .username("SomeUser")
+                .startDate(LocalDateTime.parse("2021-01-01T00:00:00"))
                 .duration(2000)
                 .firstName("Some")
                 .lastName("User")
+                .actionType(ActionType.ADD)
                 .build();
     }
 
