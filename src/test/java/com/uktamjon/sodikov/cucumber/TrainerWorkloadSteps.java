@@ -2,11 +2,15 @@ package com.uktamjon.sodikov.cucumber;
 
 import com.uktamjon.sodikov.domains.summary.Summary;
 import com.uktamjon.sodikov.domains.trainer.Trainer;
+import com.uktamjon.sodikov.enums.ActionType;
 import com.uktamjon.sodikov.services.SummaryService;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.time.LocalDateTime;
+
 import static org.junit.Assert.*;
 public class TrainerWorkloadSteps {
     private Trainer trainer;
@@ -19,6 +23,8 @@ public class TrainerWorkloadSteps {
         trainer= Trainer.builder()
                 .username("SomeUser")
                 .duration(2000)
+                .startDate(LocalDateTime.parse("2021-01-01T00:00:00"))
+                .actionType(ActionType.ADD)
                 .firstName("Some")
                 .lastName("User")
                 .build();
