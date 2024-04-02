@@ -1,7 +1,7 @@
 package com.uktamjon.sodikov.repositories;
 
+import com.uktamjon.sodikov.domains.Trainer;
 import com.uktamjon.sodikov.domains.summary.Summary;
-import com.uktamjon.sodikov.domains.trainer.Trainer;
 import com.uktamjon.sodikov.services.SummaryService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

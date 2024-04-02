@@ -1,9 +1,10 @@
 package com.uktamjon.sodikov.domains.summary;
 
-import com.uktamjon.sodikov.domains.trainer.Trainer;
+import com.uktamjon.sodikov.domains.Trainer;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -22,4 +23,5 @@ public class Summary {
 
     @OneToMany(mappedBy = "summary", cascade = CascadeType.ALL)
     private List<YearlySummary> yearlySummaries;
+
 }

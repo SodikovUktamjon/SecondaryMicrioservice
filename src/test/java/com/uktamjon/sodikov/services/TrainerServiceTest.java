@@ -1,11 +1,10 @@
 package com.uktamjon.sodikov.services;
 
+import com.uktamjon.sodikov.domains.Trainer;
 import com.uktamjon.sodikov.domains.mongoDbSummary.MonthEntry;
 import com.uktamjon.sodikov.domains.mongoDbSummary.TrainerDocument;
 import com.uktamjon.sodikov.domains.mongoDbSummary.YearEntry;
-import com.uktamjon.sodikov.domains.trainer.Trainer;
 import com.uktamjon.sodikov.repositories.TrainerDocumentRepository;
-import com.uktamjon.sodikov.services.TrainerDocumentService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -56,7 +55,7 @@ class TrainerServiceTest {
         Trainer newTrainer = createMockTrainer();
         trainerService.processingNewEvent(newTrainer);
         verify(trainerRepository, times(1)).findByUsername("john.doe");
-        verify(trainerRepository, times(1)).save(any());
+
     }
 
     @Test

@@ -1,6 +1,6 @@
 package com.uktamjon.sodikov.listeners;
 
-import com.uktamjon.sodikov.domains.trainer.Trainer;
+import com.uktamjon.sodikov.domains.Trainer;
 import com.uktamjon.sodikov.services.SummaryService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

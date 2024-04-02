@@ -1,7 +1,9 @@
-package com.uktamjon.sodikov.domains.trainer;
+package com.uktamjon.sodikov.domains;
 
 import com.uktamjon.sodikov.enums.ActionType;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -17,7 +19,7 @@ public class Trainer {
 
     @Id
     private Integer id;
-
+    private Long trainerId;
     private String firstName;
     private String lastName;
     private String username;

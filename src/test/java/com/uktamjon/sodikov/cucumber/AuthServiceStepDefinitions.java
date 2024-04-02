@@ -5,7 +5,6 @@ import com.uktamjon.sodikov.dtos.CreateAuthUserDTO;
 import com.uktamjon.sodikov.dtos.GetTokenDTO;
 import com.uktamjon.sodikov.services.AuthService;
 import com.uktamjon.sodikov.services.UserService;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

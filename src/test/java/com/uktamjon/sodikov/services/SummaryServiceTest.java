@@ -2,8 +2,8 @@ package com.uktamjon.sodikov.services;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import com.uktamjon.sodikov.domains.Trainer;
 import com.uktamjon.sodikov.domains.summary.Summary;
-import com.uktamjon.sodikov.domains.trainer.Trainer;
 import com.uktamjon.sodikov.enums.ActionType;
 import com.uktamjon.sodikov.repositories.SummaryRepository;
 import org.junit.jupiter.api.Test;

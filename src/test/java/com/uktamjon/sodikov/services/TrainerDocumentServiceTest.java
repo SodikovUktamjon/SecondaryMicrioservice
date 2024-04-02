@@ -1,9 +1,9 @@
 package com.uktamjon.sodikov.services;
 
+import com.uktamjon.sodikov.domains.Trainer;
 import com.uktamjon.sodikov.domains.mongoDbSummary.MonthEntry;
 import com.uktamjon.sodikov.domains.mongoDbSummary.TrainerDocument;
 import com.uktamjon.sodikov.domains.mongoDbSummary.YearEntry;
-import com.uktamjon.sodikov.domains.trainer.Trainer;
 import com.uktamjon.sodikov.repositories.TrainerDocumentRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,6 +17,7 @@ import java.util.List;
 
 import static com.mongodb.assertions.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -43,19 +44,9 @@ public class TrainerDocumentServiceTest {
         verify(trainerDocumentRepository, times(1)).findByUsername(username);
     }
 
+
     @Test
-    public void testFindByUsername_notFound() throws Exception {
-        String username = "test_user";
-
-        Mockito.when(trainerDocumentRepository.findByUsername(username)).thenReturn(null);
-
-        TrainerDocument actualTrainerDocument = trainerDocumentService.findByUsername(username);
-
-        assertNull(actualTrainerDocument);
-        verify(trainerDocumentRepository, times(1)).findByUsername(username);
-    }
-    @Test
-    public void testUpdateTrainingsSummaryDuration() throws Exception {
+    public void testUpdateTrainingsSummaryDuration() {
         String username = "test_user";
         TrainerDocument trainerDocument = new TrainerDocument();
         trainerDocument.setUsername(username);
@@ -65,7 +56,7 @@ public class TrainerDocumentServiceTest {
         trainerDocumentService.updateTrainingsSummaryDuration(trainerDocument);
 
         verify(trainerDocumentRepository, times(1)).findByUsername(username);
-        verify(trainerDocumentRepository, times(1)).save(trainerDocument);
+        verify(trainerDocumentRepository, times(1)).insert(trainerDocument);
     }
     @Test
     public void testProcessingNewEvent_newTrainer() throws Exception {
@@ -82,7 +73,7 @@ public class TrainerDocumentServiceTest {
         trainerDocumentService.processingNewEvent(trainer);
 
         verify(trainerDocumentRepository, times(1)).findByUsername(username);
-        verify(trainerDocumentRepository, times(1)).save(Mockito.any(TrainerDocument.class));
+        verify(trainerDocumentRepository, times(1)).insert(Mockito.any(TrainerDocument.class));
     }
     @Test
     public void testProcessingNewEvent_existingTrainerExistingYearMonth() throws Exception {

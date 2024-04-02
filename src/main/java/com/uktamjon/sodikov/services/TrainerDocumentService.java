@@ -1,9 +1,9 @@
 package com.uktamjon.sodikov.services;
 
+import com.uktamjon.sodikov.domains.Trainer;
 import com.uktamjon.sodikov.domains.mongoDbSummary.MonthEntry;
 import com.uktamjon.sodikov.domains.mongoDbSummary.TrainerDocument;
 import com.uktamjon.sodikov.domains.mongoDbSummary.YearEntry;
-import com.uktamjon.sodikov.domains.trainer.Trainer;
 import com.uktamjon.sodikov.repositories.TrainerDocumentRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

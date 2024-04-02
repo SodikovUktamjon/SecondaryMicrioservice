@@ -1,7 +1,7 @@
 package com.uktamjon.sodikov.cucumber;
 
+import com.uktamjon.sodikov.domains.Trainer;
 import com.uktamjon.sodikov.domains.summary.Summary;
-import com.uktamjon.sodikov.domains.trainer.Trainer;
 import com.uktamjon.sodikov.enums.ActionType;
 import com.uktamjon.sodikov.services.SummaryService;
 import io.cucumber.java.en.Given;

@@ -1,6 +1,7 @@
 package com.uktamjon.sodikov.controllers;
 
-import com.uktamjon.sodikov.domains.trainer.Trainer;
+
+import com.uktamjon.sodikov.domains.Trainer;
 import com.uktamjon.sodikov.services.SummaryService;
 import com.uktamjon.sodikov.domains.summary.Summary;
 import jakarta.validation.constraints.NotNull;

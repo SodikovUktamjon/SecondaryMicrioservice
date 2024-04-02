@@ -5,37 +5,58 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.0</version>
+        <version>3.2.1</version>
         <relativePath/>
     </parent>
-    <groupId>com.uktamjon.sodikov</groupId>
-    <artifactId>SecondaryMicroservice</artifactId>
+    <groupId>com.example</groupId>
+    <artifactId>SecondaryMicrioservice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>SecondaryMicroservice</name>
-    <description>SecondaryMicroservice</description>
+    <name>SecondaryMicrioservice</name>
+    <description>SecondaryMicrioservice</description>
     <properties>
         <java.version>17</java.version>
     </properties>
     <dependencies>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-mongodb</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
             <version>3.1.0</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <version>3.1.0</version>
+            <version>3.1.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.1.7.Final</version>
+        </dependency>
+        <dependency>
+        <groupId>org.hibernate.validator</groupId>
+        <artifactId>hibernate-validator</artifactId>
+            <version>7.0.1.Final</version>
+    </dependency>
 
-
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.5.4</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
         <dependency>
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
@@ -44,9 +65,21 @@
 
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>3.1.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
             <version>3.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>2.1.214</version>
+            <scope>test</scope>
         </dependency>
 
         <!--    <dependency>-->
@@ -54,7 +87,21 @@
         <!--      <artifactId>swagger-ui</artifactId>-->
         <!--      <version>4.18.2</version>-->
         <!--    </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+            <version>3.1.0</version>
+        </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-activemq</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.resilience4j</groupId>
+            <artifactId>resilience4j-spring-boot2</artifactId>
+            <version>1.7.0</version> <!-- Use the latest version available -->
+        </dependency>
 
         <!-- Swagger -->
         <dependency>
@@ -64,68 +111,33 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>3.1.0</version>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-            <version>3.1.0</version>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-api</artifactId>
-            <version>0.11.5</version>
+            <version>0.11.2</version> <!-- Use the latest version available -->
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
-            <version>3.0.2</version>
-        </dependency>
-
-
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-impl</artifactId>
-            <version>0.11.5</version>
+            <version>0.11.2</version> <!-- Use the same version as jjwt-api -->
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-jackson</artifactId>
-            <version>0.11.5</version>
+            <version>0.11.2</version> <!-- Use the same version as jjwt-api -->
+            <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.5.4</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>6.2.7.Final</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <version>3.1.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-activemq</artifactId>
-            <version>3.2.3</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version> <!-- Use the latest version available -->
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -147,61 +159,62 @@
             <scope>test</scope>
         </dependency>
 
+
+
     </dependencies>
 
-
     <build>
-        <!--        <plugins>-->
-        <!--            <plugin>-->
-        <!--                <groupId>org.jacoco</groupId>-->
-        <!--                <artifactId>jacoco-maven-plugin</artifactId>-->
-        <!--                <version>0.8.7</version>-->
-        <!--                <configuration>-->
-        <!--                    <excludes>-->
-        <!--                        <exclude>com/uktamjon/sodikov/dtos/*</exclude>-->
-        <!--                        <exclude>com/uktamjon/sodikov/domains/*</exclude>-->
-        <!--                        <exclude>com/uktamjon/sodikov/enums/*</exclude>-->
-        <!--                        <exclude>com/uktamjon/sodikov/handlers/*</exclude>-->
-        <!--                        <exclude>com/uktamjon/sodikov/response/*</exclude>-->
-        <!--                        <exclude>com/uktamjon/sodikov/summary/*</exclude>-->
-        <!--                    </excludes>-->
-        <!--                </configuration>-->
-        <!--                <executions>-->
-        <!--                    <execution>-->
-        <!--                        <id>initialize</id>-->
-        <!--                        <goals>-->
-        <!--                            <goal>prepare-agent</goal>-->
-        <!--                        </goals>-->
-        <!--                    </execution>-->
-        <!--                    <execution>-->
-        <!--                        <id>generate-report</id>-->
-        <!--                        <goals>-->
-        <!--                            <goal>report</goal>-->
-        <!--                        </goals>-->
-        <!--                    </execution>-->
-        <!--                    <execution>-->
-        <!--                        <id>check-code-coverage</id>-->
-        <!--                        <goals>-->
-        <!--                            <goal>check</goal>-->
-        <!--                        </goals>-->
-        <!--                        <configuration>-->
-        <!--                            <rules>-->
-        <!--                                <rule implementation="org.jacoco.maven.RuleConfiguration">-->
-        <!--                                    <element>BUNDLE</element>-->
-        <!--                                    <limits>-->
-        <!--                                        <limit implementation="org.jacoco.report.check.Limit">-->
-        <!--                                            <counter>LINE</counter>-->
-        <!--                                            <value>COVEREDRATIO</value>-->
-        <!--                                            <minimum>80%</minimum>-->
-        <!--                                        </limit>-->
-        <!--                                    </limits>-->
-        <!--                                </rule>-->
-        <!--                            </rules>-->
-        <!--                        </configuration>-->
-        <!--                    </execution>-->
-        <!--                </executions>-->
-        <!--            </plugin>-->
-        <!--        </plugins>-->
+        <plugins>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.7</version>
+                <configuration>
+                    <excludes>
+                        <exclude>com/example/secondarymicrioservice/model/**</exclude>
+                        <exclude>com/example/secondarymicrioservice/repository/*</exclude>
+                    </excludes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>initialize</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>generate-report</id>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>check-code-coverage</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <rule implementation="org.jacoco.maven.RuleConfiguration">
+                                    <element>BUNDLE</element>
+                                    <limits>
+                                        <limit implementation="org.jacoco.report.check.Limit">
+                                            <counter>LINE</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>80%</minimum>
+                                        </limit>
+                                    </limits>
+                                </rule>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
     </build>
 
 </project>
